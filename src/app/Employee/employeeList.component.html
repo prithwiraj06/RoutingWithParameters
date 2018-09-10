@@ -1,0 +1,24 @@
+<div class="container">
+<table class="table table-bordered table-hover table-stripped">
+    <tr class="bg-primary">
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Gender</th>
+        <th>Employee Salary</th>
+    </tr>
+    <tr *ngFor="let emp of employee">
+        <td>
+            <a [routerLink]="['/employees',emp.Id]">{{emp.Id}}</a>
+        </td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.salary}}</td>
+    </tr>
+    <tr *ngIf="!employee">
+        <td [attr.colspan]="5">{{statusMessage}}</td>
+    </tr>
+    <tr *ngIf="employee && employee.length==0">
+        <td [attr.colspan]="5">{{statusMessage}}</td>
+    </tr>
+</table>
+</div>

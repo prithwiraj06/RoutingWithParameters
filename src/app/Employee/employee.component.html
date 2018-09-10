@@ -1,0 +1,35 @@
+<div class="container">
+<div class="panel panel-primary">
+<div class="panel-heading">Employee Details</div>
+<div class="panel-body">
+<table class="table table-bordered table-hover">
+    <tr>
+        <th class="text-primary">Employee Id</th>
+        <td>{{employee?.Id}}</td>
+    </tr>
+    <tr>
+        <th class="text-primary">Employee Name</th>
+        <td>{{employee?.name}}</td>
+    </tr>
+    <tr>
+        <th class="text-primary">Employee Gender</th>
+        <td>{{employee?.gender}}</td>
+    </tr>
+    <tr>
+        <th class="text-primary">Employee Salary</th>
+        <td>{{employee?.salary}}</td>
+    </tr>
+   
+</table>
+<div *ngIf="!employee">
+    <span class="text-danger">{{statusMessage}}</span>
+</div>
+<div *ngIf="employee && employee?.length==0">
+    <span class="text-primary">{{statusMessage}}</span>
+</div>
+</div>
+<div class="panel-footer">
+    <a href="employee">Back to Employee List </a>
+</div>
+       
+</div>
